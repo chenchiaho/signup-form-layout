@@ -18,7 +18,7 @@
 
         * {
             box-sizing: border-box;
-            border: 1px solid black;
+            /* border: 1px solid black; */
             margin: 0;
         }
 
@@ -36,7 +36,10 @@
 
         }
 
-        .wrapper {}
+        .wrapper {
+            display: flex;
+
+        }
 
         .main-body {
             border-radius: var(--borderRadius);
@@ -51,15 +54,15 @@
         }
 
         .aside-left {
-
+            flex-shrink: 2;
             width: 100%;
             background: #ffd97a;
             color: saddlebrown;
-            flex: 1 1 auto;
+
         }
 
         .aside-left img {
-            margin-right: 30px;
+
             padding: 50px;
             width: 100%;
         }
@@ -79,7 +82,8 @@
         /* Sign Up Form */
         /* Full-width input fields */
         input[type=text],
-        input[type=password] {
+        input[type=password],
+        input[type=email] {
             width: 100%;
             padding: 15px;
             margin: 5px 0 22px 0;
@@ -89,10 +93,14 @@
         }
 
         input[type=text]:focus,
-        input[type=password]:focus {
+        input[type=password]:focus,
+        input[type=email]:focus {
+
             background-color: #ddd;
             outline: none;
         }
+
+
 
         hr {
             width: 100%;
@@ -188,6 +196,20 @@
             justify-content: center;
             align-items: center;
         }
+
+        .name-user {
+
+            display: flex;
+            flex-direction: row;
+        }
+
+        input[name="fullname"] {
+            width: 95%;
+        }
+
+        input[name="username"] {
+            width: 95%;
+        }
     </style>
 </head>
 
@@ -223,15 +245,27 @@
                         <p class="separator">or</p>
                         <hr>
 
+                        <div class="name-user">
 
-                        <label for="email"><b>Email</b></label>
-                        <input type="text" placeholder="Enter Email" name="email" required>
+                            <div>
+                                <label for="fullname"><b>Full Name</b></label>
+                                <input type="text" class="fullname" placeholder="Enter Your Name" name="fullname"
+                                    required>
+                            </div>
+                            <div>
+                                <label for="username"><b>Username</b></label>
+                                <input type="text" placeholder="Enter Your Username" name="username" required>
+
+                            </div>
+
+                        </div>
+
+                        <label for="email"><b>Email Address</b></label>
+                        <input type="email" placeholder="Enter Your Email" name="email" required>
 
                         <label for="psw"><b>Password</b></label>
                         <input type="password" placeholder="Enter Password" name="psw" required>
 
-                        <label for="psw-repeat"><b>Repeat Password</b></label>
-                        <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
 
                         <label>
                             <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px">
